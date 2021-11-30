@@ -14,7 +14,7 @@ const MainContainer = () => {
             height="600"
             className={styles.mainIcon} />
           <h1 className={styles.neonText}>BEER!</h1>
-          <p className={styles.neonText}>All you need is</p>
+          <p className={styles.neonText}>All you need is...</p>
           <div className={styles.customSelect}>
             <select name="beers" id="beers" className={styles.beers}>
               <option value="all">All</option>
