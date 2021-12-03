@@ -23,7 +23,7 @@ const BeersContainer = ({ beerData, fetchBeers }) => {
                         <h2>{beerData.error}</h2>
                     ) : (
                         <div className={styles.beerListContainer}>
-                            <h2>Beer List</h2>
+                            <h2>All</h2>
                             <div className={styles.beerList}>
                                 {beerData && 
                                 beerData.beers && beerData.beers.map(beer => (

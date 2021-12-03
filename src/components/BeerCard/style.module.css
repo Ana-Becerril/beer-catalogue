@@ -8,7 +8,8 @@
     margin: 15px;
     font-size: 25px;
     border: 5px dotted #f9a826;
-    filter:drop-shadow(0 0 3px yellow);
+    border-radius: 5px;
+    filter:drop-shadow(0 0 5px yellow);
     font-family:Pathway;
     text-align: center;
     justify-content: center;
@@ -28,4 +29,8 @@
 .name:hover{
     color: #f9a826;
     cursor: pointer;
+}
+
+.title{
+    display: flex;
 }

@@ -3,7 +3,6 @@ html, body{
     width: 100%;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
     background-color: #000;
 }
 
@@ -18,12 +17,41 @@ html, body{
 
 .wave{
     position: absolute;
+    z-index: 1;
 }
 
 .beerListContainer{
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+h2{
+    align-self: center;
+    padding: 10px 0;
+    font-family: pathway;
+    font-size: 70px;
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #f9a826,
+        0 0 80px #f9a826,
+        0 0 90px #f9a826,
+        0 0 100px #f9a826,
+        0 0 150px #f9a826;
+    
+    }
+
 }
 
 .beerList{

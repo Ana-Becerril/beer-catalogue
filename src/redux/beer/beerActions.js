@@ -5,7 +5,7 @@ export const fetchBeers = () => {
     return (dispatch) => {
         dispatch(fetchBeersRequest())
         axios
-        .get('https://api.punkapi.com/v2/beers?page=2&per_page=80')
+        .get('https://api.punkapi.com/v2/beers?page=3&per_page=80')
         .then(response => {
             const beers = response.data
             dispatch(fetchBeersSucces(beers))
@@ -21,13 +21,6 @@ export const fetchBeersRequest = () => {
         type: FETCH_BEERS_REQUEST
     }
 }
-
-// export const setCategory = category =>{
-//     return{
-//         type: SET_CATEGORY,
-//         payload: category
-//     }
-// }
 
 export const fetchBeersSucces = beers =>{
     return{

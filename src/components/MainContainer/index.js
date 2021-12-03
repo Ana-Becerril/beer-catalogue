@@ -1,6 +1,17 @@
 import styles from './style.module.css';
 import MainIcon from '../../assets/main.svg'
 
+const categories = [
+  'All',
+  'Pale Ale',
+  'Pale',
+  'Lager',
+  'Porter',
+  'Wheat',
+  'Stout',
+  'IPA'
+];
+
 const MainContainer = () => {
 
   return (
