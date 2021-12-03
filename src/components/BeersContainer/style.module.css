@@ -14,5 +14,27 @@ html, body{
     padding:0;
     color:white;
     display: flex;
+}
+
+.wave{
+    position: absolute;
+}
+
+.beerListContainer{
+    width: 100%;
+    display: flex;
     flex-direction: column;
+}
+
+.beerList{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+
+li{
+    color: white;
+    padding: 10px;
 }

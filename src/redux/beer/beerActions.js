@@ -1,5 +1,20 @@
 import axios from "axios"
-import { FETCH_BEERS_FAILURE, FETCH_BEERS_REQUEST, FETCH_BEERS_SUCCES, SET_CATEGORY } from "./beerTypes"
+import { FETCH_BEERS_FAILURE, FETCH_BEERS_REQUEST, FETCH_BEERS_SUCCES } from "./beerTypes"
+
+export const fetchBeers = () => {
+    return (dispatch) => {
+        dispatch(fetchBeersRequest())
+        axios
+        .get('https://api.punkapi.com/v2/beers?page=2&per_page=80')
+        .then(response => {
+            const beers = response.data
+            dispatch(fetchBeersSucces(beers))
+        })
+        .catch(error =>{
+            dispatch(fetchBeersFailure(error.message))
+        })
+    }
+}
 
 export const fetchBeersRequest = () => {
     return {
@@ -7,12 +22,12 @@ export const fetchBeersRequest = () => {
     }
 }
 
-export const setCategory = category =>{
-    return{
-        type: SET_CATEGORY,
-        payload: category
-    }
-}
+// export const setCategory = category =>{
+//     return{
+//         type: SET_CATEGORY,
+//         payload: category
+//     }
+// }
 
 export const fetchBeersSucces = beers =>{
     return{
@@ -28,17 +43,3 @@ export const fetchBeersFailure = error =>{
     }
 }
 
-export const fetchBeers = () =>{
-    return (dispatch) => {
-        dispatch(fetchBeersRequest)
-        axios.get('https://api.punkapi.com/v2/beers')
-        .then(response => {
-            const beers = response.data
-            dispatch(fetchBeersSucces(beers))
-        })
-        .catch(error =>{
-            const errorMsg = error.message
-            dispatch(fetchBeersFailure(errorMsg))
-        })
-    }
-}

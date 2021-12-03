@@ -1,0 +1,31 @@
+
+.beerCardContainer{
+    width: 380px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    margin: 15px;
+    font-size: 25px;
+    border: 5px dotted #f9a826;
+    filter:drop-shadow(0 0 3px yellow);
+    font-family:Pathway;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.name, .tagline, .abv{
+    color: white;
+}
+
+.name{
+    font-family: Sacramento;
+    font-size: 35px;
+}
+
+.name:hover{
+    color: #f9a826;
+    cursor: pointer;
+}
