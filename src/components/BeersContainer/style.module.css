@@ -13,11 +13,13 @@ html, body{
     padding:0;
     color:white;
     display: flex;
+    position: relative;
 }
 
 .wave{
-    position: absolute;
-    z-index: 1;
+    width: 100vw;
+    position:absolute ;
+    bottom:400px
 }
 
 .beerListContainer{
@@ -27,31 +29,13 @@ html, body{
 }
 
 h2{
-    align-self: center;
-    padding: 10px 0;
+    align-self: flex-start;
+    padding: 40px 90px;
     font-family: pathway;
     font-size: 70px;
     animation: flicker 1.5s infinite alternate;
-    color: #fff;
+    color: #f9a826;
     letter-spacing: 5px;
-}
-
-@keyframes flicker {
-    
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-  
-        text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #f9a826,
-        0 0 80px #f9a826,
-        0 0 90px #f9a826,
-        0 0 100px #f9a826,
-        0 0 150px #f9a826;
-    
-    }
-
 }
 
 .beerList{
@@ -66,3 +50,21 @@ li{
     color: white;
     padding: 10px;
 }
+
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background:#f9a826; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background:#fff; 
+  }

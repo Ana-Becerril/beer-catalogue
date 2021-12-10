@@ -6,10 +6,9 @@
     flex-direction: column;
     padding:10px;
     margin: 15px;
-    font-size: 25px;
-    border: 5px dotted #f9a826;
-    border-radius: 5px;
-    filter:drop-shadow(0 0 5px yellow);
+    font-size: 22px;
+    border-radius: 15px;
+    background-color: #2F2E41;
     font-family:Pathway;
     text-align: center;
     justify-content: center;
@@ -17,13 +16,19 @@
     align-content: center;
 }
 
+.wave{
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+}
+
 .name, .tagline, .abv{
     color: white;
 }
 
 .name{
-    font-family: Sacramento;
-    font-size: 35px;
+    font-family: Pathway;
+    font-size: 30px;
 }
 
 .name:hover{
