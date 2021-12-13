@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FETCH_BEERS_FAILURE, FETCH_BEERS_REQUEST, FETCH_BEERS_SUCCES } from "./beerTypes"
+import { FETCH_BEERS_FAILURE, FETCH_BEERS_REQUEST, FETCH_BEERS_SUCCES, FILTER_BEERS } from "./beerTypes"
 
 export const fetchBeers = () => {
     return (dispatch) => {
@@ -33,6 +33,14 @@ export const fetchBeersFailure = error =>{
     return{
         type: FETCH_BEERS_FAILURE,
         payload: error
+    }
+
+}
+
+export const filterBeers = category =>{
+    return{
+        type: FILTER_BEERS,
+        payload: category
     }
 }
 

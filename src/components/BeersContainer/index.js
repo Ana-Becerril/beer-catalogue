@@ -1,16 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import styles from './style.module.css';
 import { fetchBeers } from '../../redux/beer/beerActions';
 import BeerCard from '../BeerCard';
-
-
+import BeerDetail from '../BeerDetail';
 
 const BeersContainer = ({ beerData, fetchBeers, value }) => {
+
+    const [beerDetail, setBeerDetail] = useState(false);
+    const [beerObject, setBeerObject] = useState({});
+    const showDetail = () => setBeerDetail(true);
+    const removeItemDetail = () => setBeerDetail(false);
+
 
     useEffect(() => {
         fetchBeers()
     }, [])
+
+    // function itemFilter(id) {
+    //     const itemId = beers.filter(beer => beer.id === id);
+    //     setBeerObject(itemId)
+    //     console.log(itemId)
+    //   }
 
     return (
         <>
@@ -33,8 +44,18 @@ const BeersContainer = ({ beerData, fetchBeers, value }) => {
                                             name={beer.name}
                                             tagline={beer.tagline}
                                             abv={beer.abv}
+                                            showDetail={showDetail}
+                                            // itemFilter={() => itemFilter(beer.id)}
                                         />
                                     ))}
+                                {beerDetail ?
+                                    <BeerDetail
+                                        name={beerObject.name}
+                                        tagline={beerObject.tagline}
+                                        abv={beerObject.abv}
+                                        description={beerObject.description}
+                                        removeItemDetail={removeItemDetail}
+                                    /> : null}
                             </div>
                         </div>
                     )}
@@ -47,12 +68,12 @@ const BeersContainer = ({ beerData, fetchBeers, value }) => {
 const mapStateToProps = state => {
     return {
         beerData: state.beer
-    };
+    }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBeers: () => dispatch(fetchBeers())
+        fetchBeers: () => dispatch(fetchBeers()),
     }
 }
 

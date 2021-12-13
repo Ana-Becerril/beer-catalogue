@@ -1,0 +1,155 @@
+.modal {
+    display: flex;
+    position: fixed; 
+    z-index: 2; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(165, 100, 100); 
+    background-color: rgba(0,0,0,0.9);
+    -webkit-animation-name: fadeIn; 
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    justify-content: center;
+    align-items: center;
+  }
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 560px;
+    z-index: 1;
+    color: #FCD752;
+    font-size: 20px;
+    background-color:#FFFF;
+    border-radius: 40px;
+    font-size: 15px;
+    
+}
+
+.removeItemDetail{
+    display: flex;
+    justify-content: end;
+}
+
+.closeIcon{
+    color: #6184C6;
+    font-size: 45px;
+    cursor: pointer;
+    margin: 18px;
+}
+
+.closeIcon :hover {
+    color: #FCA3B9;
+  }
+
+.productCardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin:2px;
+    border-radius: 12px;
+    text-align: center;
+    color: #6184C6;
+    font-family: 'Quicksand-Light';
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.name, .price{
+    width: 90%;
+    font-size: 20px;
+    font-family: 'Quicksand-Light';
+    color: #6184C6;
+    cursor: pointer;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.description{
+    width: 90%;
+    height: 100%;
+    overflow:auto;
+    width: 90%;
+    font-size: 15px;
+    font-family: 'Poppins-Ligth';;
+    color: #3e598a;
+    cursor: pointer;
+    text-align: justify;
+    padding: 20px;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.btnModal{
+    font-family: 'Quicksand-Light';
+    background-color: #6184C6;
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #F6F4F9;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btnModal :hover {
+background-color:#FCD752;
+overflow:auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #FCD752; 
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6184C6; 
+}
+
+@media only screen and (max-width: 570px) {
+
+  .modalContent {
+    width: 90%; 
+  } 
+
+  .modal img{
+    height: 180px;
+    width: 180px;
+    padding: 0;
+  }
+
+  .closeIcon{
+    margin: 2;
+  }
+
+}

@@ -1,9 +1,10 @@
-import { FETCH_BEERS_FAILURE, FETCH_BEERS_REQUEST, FETCH_BEERS_SUCCES } from "./beerTypes"
+import { FETCH_BEERS_FAILURE, FETCH_BEERS_REQUEST, FETCH_BEERS_SUCCES, FILTER_BEERS } from "./beerTypes"
 
 const initialState = {
     loading: false,
     beers: [],
-    error: ""
+    error: "",
+    filteredData: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -24,6 +25,12 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 beers: [],
                 error: action.payload
+            }
+ 
+        case FILTER_BEERS:
+            return {
+                 ...state, 
+                 filteredData: state.beers.filter((beer) => beer.ingredients.malt[0].name === action.payload)
             };
         default:
             return state
