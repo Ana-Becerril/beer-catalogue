@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import BeersContainer from '../BeersContainer';
 import { filterBeers} from '../../redux/beer/beerActions';
 
-const MainContainer = ({filterData, filterBeers}) => {
+const MainContainer = ({ filterBeers}) => {
   const [value, setValue] = useState('All');
 
   const handleSelect = (e) => {
@@ -48,7 +48,7 @@ const MainContainer = ({filterData, filterBeers}) => {
       </div>
       <BeersContainer
         value={value}
-        filterData={filterData}
+        filterBeers={filterBeers}
       />
     </>
   );
@@ -56,7 +56,7 @@ const MainContainer = ({filterData, filterBeers}) => {
 
 const mapStateToProps = state => {
   return {
-      filterData: state.beer
+      beerData: state.beer
   }
 }
 

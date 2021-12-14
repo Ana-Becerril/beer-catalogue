@@ -67,7 +67,7 @@
     align-content: center;
 }
 
-.name, .price{
+.name {
     width: 90%;
     font-size: 20px;
     font-family: 'Quicksand-Light';

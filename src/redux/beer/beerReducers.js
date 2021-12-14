@@ -26,11 +26,10 @@ const reducer = (state = initialState, action) => {
                 beers: [],
                 error: action.payload
             }
- 
         case FILTER_BEERS:
             return {
-                 ...state, 
-                 filteredData: state.beers.filter((beer) => beer.ingredients.malt[0].name === action.payload)
+                ...state,
+                filteredData: state.beers.filter((beer) => beer.tagline.includes(action.payload) || beer.name.includes(action.payload) || beer.description.includes(action.payload))
             };
         default:
             return state
