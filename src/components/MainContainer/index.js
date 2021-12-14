@@ -8,6 +8,7 @@ import { filterBeers} from '../../redux/beer/beerActions';
 const MainContainer = ({ filterBeers}) => {
   const [value, setValue] = useState('All');
 
+
   const handleSelect = (e) => {
     setValue(e.target.value)
   }
