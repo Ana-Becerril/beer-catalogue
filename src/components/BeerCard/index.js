@@ -4,7 +4,7 @@ import BeerIcon from '../../assets/beer.svg'
 import BeerDetail from '../BeerDetail';
 
 
-function BeerCard({ name, tagline, abv}) {
+function BeerCard({ name, tagline, abv, showModal}) {
 
     const [beerDetail, setBeerDetail] = useState(false);
     const showDetail = () => setBeerDetail(true);

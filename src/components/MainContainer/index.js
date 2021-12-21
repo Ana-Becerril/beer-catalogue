@@ -31,16 +31,15 @@ const MainContainer = ({ filterBeers}) => {
                 id="beers"
                 className={styles.beers}
                 onChange={e => { handleSelect(e); filterBeers(e.target.value)}}
-                value={value}
-              >
+                value={value}>
                 <option value="All">All</option>
-                <option value="Pale">Pale</option>
                 <option value="Pale Ale">Pale Ale</option>
                 <option value="Lager">Lager</option>
                 <option value="Porter">Porter</option>
                 <option value="Wheat">Wheat</option>
                 <option value="Stout">Stout</option>
                 <option value="IPA">IPA</option>
+                <option value="Munich">Munich</option>
               </select>
             </div>
           </div>

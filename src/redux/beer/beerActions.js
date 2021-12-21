@@ -40,7 +40,7 @@ export const fetchBeersFailure = error =>{
 export const filterBeers = category =>{
     return{
         type: FILTER_BEERS,
-        payload: category
+        payload: category,
     }
 }
 

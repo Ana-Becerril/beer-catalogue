@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { connect } from 'react-redux';
 import styles from './style.module.css';
 import { fetchBeers, filterBeers } from '../../redux/beer/beerActions';
 import BeerCard from '../BeerCard';
 
-const BeersContainer = ({ beerData, fetchBeers, value }) => {
-    const [arr, setArr] = useState([])
+const BeersContainer = ({ beerData, fetchBeers, value, filteredBeers}) => {
 
+    
     useEffect(() => {
         fetchBeers()
     }, [])
 
-     useEffect(() => {
-         changeArr()
-     }, [value])
-
-    const changeArr = () => {
-        if (beerData.beers.length > 0 && beerData.filteredData.length === 0) {
-            setArr(beerData.beers)
-            return
-        } setArr(beerData.filteredData)
-    }
 
     return (
         <>
@@ -37,7 +27,7 @@ const BeersContainer = ({ beerData, fetchBeers, value }) => {
                         <div className={styles.beerListContainer}>
                             <h2>{value}</h2>
                             <div className={styles.beerList}>
-                                {beerData && arr.map(beer => (
+                                { filteredBeers.map(beer => (
                                         <BeerCard
                                             name={beer.name}
                                             tagline={beer.tagline}
@@ -55,13 +45,16 @@ const BeersContainer = ({ beerData, fetchBeers, value }) => {
 
 const mapStateToProps = state => {
     return {
-        beerData: state.beer
+        beerData: state.beer,
+        filteredBeers: state.beer.filteredData
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchBeers: () => dispatch(fetchBeers())
+        fetchBeers: () => dispatch(fetchBeers()),
+        filterBeers: () => dispatch(filterBeers())
+
     }
 }
 

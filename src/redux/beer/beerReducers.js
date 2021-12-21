@@ -4,7 +4,8 @@ const initialState = {
     loading: false,
     beers: [],
     error: "",
-    filteredData: []
+    filteredData: [],
+    category: "All"
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,6 +19,7 @@ const reducer = (state = initialState, action) => {
             return {
                 loading: false,
                 beers: action.payload,
+                filteredData: action.payload,
                 error: ''
             }
         case FETCH_BEERS_FAILURE:
@@ -27,6 +29,10 @@ const reducer = (state = initialState, action) => {
                 error: action.payload
             }
         case FILTER_BEERS:
+            if (action.payload === "All") {
+                return{...state,
+                filteredData: state.beers}
+            }
             return {
                 ...state,
                 filteredData: state.beers.filter((beer) => beer.tagline.includes(action.payload) || beer.name.includes(action.payload) || beer.description.includes(action.payload))
