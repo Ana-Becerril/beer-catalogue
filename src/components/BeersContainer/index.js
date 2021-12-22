@@ -8,8 +8,8 @@ const BeersContainer = ({ beerData, fetchBeers, value, filteredBeers}) => {
 
     useEffect(() => {
         fetchBeers()
-    }, [])
-
+    }, [fetchBeers])
+    
 
     return (
         <>
