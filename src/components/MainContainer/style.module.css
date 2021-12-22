@@ -148,11 +148,7 @@ span{
   @media only screen and (max-width: 570px) {
 
     .wave{
-      position: relative;
-      margin: 0%;
-      padding: 0;
-      z-index: 0;
-      bottom: 0%;
+     display: none;
     }
 
     .mainContainer{
@@ -163,6 +159,9 @@ span{
     .mainIcon{
       width: 300px;
       height: 300px;
+      position: relative;
+      top: 240px;
+      left: 25px;
   }
 
   .topContainer{
@@ -172,20 +171,31 @@ span{
   .infoContainer {
     padding-top: 0;
     margin-left: 0;
+    position: relative;
+    bottom: 280px;
+    left: 40px;
   } 
 
   h1 {
    
     font-size: 130px;
-    margin: 30px;
+    margin: 0px;
     padding-top: 0px;
-    padding-left: 0px;
+    padding-left: 20px;
     letter-spacing: 3px;
 }
 
 p {
     font-size: 50px;
     margin: 0;
+}
+
+.customSelect {
+  position: relative;
+  padding-left: 0px;
+  z-index: 1;
+  padding-right: 100px;
+  top: 250px;
 }
 
   }
