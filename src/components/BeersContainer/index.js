@@ -6,7 +6,6 @@ import BeerCard from '../BeerCard';
 
 const BeersContainer = ({ beerData, fetchBeers, value, filteredBeers}) => {
 
-    
     useEffect(() => {
         fetchBeers()
     }, [])
@@ -32,6 +31,8 @@ const BeersContainer = ({ beerData, fetchBeers, value, filteredBeers}) => {
                                             name={beer.name}
                                             tagline={beer.tagline}
                                             abv={beer.abv}
+                                            description={beer.description}
+                                            food_pairing={beer.food_pairing}
                                         />
                                     ))}
                             </div>

@@ -4,7 +4,7 @@ import BeerIcon from '../../assets/beer.svg'
 import BeerDetail from '../BeerDetail';
 
 
-function BeerCard({ name, tagline, abv, showModal}) {
+const BeerCard = ({ name, tagline, abv, description, food_pairing}) => {
 
     const [beerDetail, setBeerDetail] = useState(false);
     const showDetail = () => setBeerDetail(true);
@@ -22,13 +22,18 @@ function BeerCard({ name, tagline, abv, showModal}) {
             width="85"
             height="85"
             className={styles.mainIcon} />
-            <div className={styles.name} onclick={showDetail}> {name} </div>
+            <div className={styles.name} onClick={showDetail}> {name} </div>
             <div className={styles.tagline}> {tagline} </div>
             <div className={styles.abv}>{abv} ABV</div>
         </div>
          {beerDetail ?
             <BeerDetail
                  removeItemDetail={removeItemDetail}
+                 name={name}
+                 tagline={tagline}
+                 abv={abv}
+                 description={description}
+                 food_pairing={food_pairing}
             /> : null}
     </>
     );
