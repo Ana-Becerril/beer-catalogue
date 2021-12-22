@@ -39,3 +39,11 @@
 .title{
     display: flex;
 }
+
+@media only screen and (max-width: 570px) {
+
+    .beerCardContainer{
+        margin-right: 28px;
+
+    }
+}
