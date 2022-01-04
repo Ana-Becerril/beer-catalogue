@@ -33,7 +33,7 @@ export const fetchBeersFailure = error =>{
         type: FETCH_BEERS_FAILURE,
         payload: error
     }
-// hjgfhjfhj
+// hjgfhjfhj 'percromato.33
 }
 
 export const filterBeers = category =>{
