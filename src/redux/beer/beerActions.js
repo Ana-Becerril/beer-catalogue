@@ -28,13 +28,12 @@ export const fetchBeersSucces = beers =>{
         payload: beers
     }
 }
-
 export const fetchBeersFailure = error =>{
     return{
         type: FETCH_BEERS_FAILURE,
         payload: error
     }
-
+// hjgfhjfhj
 }
 
 export const filterBeers = category =>{
