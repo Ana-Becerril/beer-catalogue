@@ -44,3 +44,5 @@ export const filterBeers = category =>{
     }
 }
 
+//This is a comment
+
